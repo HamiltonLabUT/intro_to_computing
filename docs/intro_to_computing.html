@@ -125,9 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#moving-around-and-listing-information" id="toc-moving-around-and-listing-information" class="nav-link" data-scroll-target="#moving-around-and-listing-information">Moving around and listing information</a></li>
   <li><a href="#absolute-versus-relative-paths" id="toc-absolute-versus-relative-paths" class="nav-link" data-scroll-target="#absolute-versus-relative-paths">Absolute versus relative paths</a></li>
   </ul></li>
-  </ul></li>
-  <li><a href="#finding-your-way-around" id="toc-finding-your-way-around" class="nav-link" data-scroll-target="#finding-your-way-around">Finding your way around</a>
-  <ul class="collapse">
+  <li><a href="#finding-your-way-around" id="toc-finding-your-way-around" class="nav-link" data-scroll-target="#finding-your-way-around">Finding your way around</a></li>
   <li><a href="#using-commands" id="toc-using-commands" class="nav-link" data-scroll-target="#using-commands">Using commands</a>
   <ul class="collapse">
   <li><a href="#overview-1" id="toc-overview-1" class="nav-link" data-scroll-target="#overview-1">Overview</a></li>
@@ -321,9 +319,8 @@ Absolute paths can be dangerous
 </div>
 </section>
 </section>
-</section>
-<section id="finding-your-way-around" class="level1">
-<h1>Finding your way around</h1>
+<section id="finding-your-way-around" class="level2">
+<h2 class="anchored" data-anchor-id="finding-your-way-around">Finding your way around</h2>
 <div class="sourceCode" id="cb13"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls /Users</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ex">Shared</span>  liberty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd /Users/liberty</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -344,6 +341,7 @@ Absolute paths can be dangerous
 <span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> cd <span class="at">-</span></span>
 <span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> pwd</span>
 <span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="ex">/Users</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="using-commands" class="level2">
 <h2 class="anchored" data-anchor-id="using-commands">Using commands</h2>
 <section id="overview-1" class="level3">
@@ -530,7 +528,7 @@ Exercise 4
 <section id="running-processes" class="level2">
 <h2 class="anchored" data-anchor-id="running-processes">Running processes</h2>
 <p>We’ll run a simple linear algebra operation in Python to illustrate how we can monitor what is happening on a machine.</p>
-<div id="3cf8c57d" class="cell" data-execution_count="1">
+<div id="38959331" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -552,7 +550,7 @@ Exercise 4
 </div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calc.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We might need to run it in a loop to be able to monitor the running process (since it finishes so quickly):</p>
-<div id="a03dcf14" class="cell" data-execution_count="2">
+<div id="b895c808" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ((i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span>i<span class="op">++</span>))<span class="op">;</span> do</span>
@@ -1263,7 +1261,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb32-211"><a href="#cb32-211" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-212"><a href="#cb32-212" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb32-213"><a href="#cb32-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-214"><a href="#cb32-214" aria-hidden="true" tabindex="-1"></a><span class="fu"># Finding your way around</span></span>
+<span id="cb32-214"><a href="#cb32-214" aria-hidden="true" tabindex="-1"></a><span class="fu">## Finding your way around</span></span>
 <span id="cb32-215"><a href="#cb32-215" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-216"><a href="#cb32-216" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
 <span id="cb32-217"><a href="#cb32-217" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> ls /Users</span>
