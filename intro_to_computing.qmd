@@ -16,7 +16,7 @@ execute:
 ::: {.callout-note}
 ## Overview
 
-This tutorial includes information about how to think about computers and how to use the command line (on Mac and Unix systems). This is heavily inspired by [Chris Paciorek's course](https://berkeley-scf.github.io/compute-skills-2024/units/intro-computing.html).
+This tutorial includes information about how to think about computers and how to use the command line (on Mac and Unix systems). Much of this information is copied from [Chris Paciorek's course](https://berkeley-scf.github.io/compute-skills-2024/units/intro-computing.html).
 :::
 
 
@@ -231,7 +231,7 @@ $ pwd
 /Users/liberty
 ```
 
-Go to the home directory of the jovyan user explicitly:
+Go to the home directory of the user explicitly:
 
 ```bash
 $ cd ~liberty
@@ -275,8 +275,8 @@ Here's an example:
 
 ```bash
 $ echo "hello there" >> example.txt
-$ echo "and goodbye" >> example.txt
-$ echo "really now" >> example.txt
+$ echo "this is a text file" >> example.txt
+$ echo "and now I am done" >> example.txt
 $ wc -l example.txt
 3 example.txt
 ```
@@ -336,20 +336,6 @@ $ head --lines=2 example.txt
 $ head --lines 2 example.txt
 ```
 
-
-### Comments
-
-Anything that follows `#` is a comment and is ignored.
-
-```bash
-$ # This is ignored
-$ ls  # Everything after the # is ignored
- compute-skills-2024                          test-jh           Untitled2.ipynb
- data_c80_regsample_3.dta                     test-private      Untitled3.ipynb
-
-```
-
-
 ### Getting help with UNIX commands
 
 Essentially all UNIX commands have  help information (called a man page), accessed using `man`.
@@ -371,15 +357,6 @@ $ ls --help
 ### Tab completion
 
 If you hit `Tab` the shell tries to figure out what command or filename you want based on the initial letters you typed.
-
-Try it with:
-
-```bash
-cd com
-ech
-```
-
-The first should allow you to get `compute-skills-2024` and the second `echo`.
 
 ::: {.callout-tip}
 ## Tab completion everywhere
