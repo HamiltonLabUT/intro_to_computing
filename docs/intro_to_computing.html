@@ -530,20 +530,7 @@ Exercise 4
 <section id="running-processes" class="level2">
 <h2 class="anchored" data-anchor-id="running-processes">Running processes</h2>
 <p>We’ll run a simple linear algebra operation in Python to illustrate how we can monitor what is happening on a machine.</p>
-<div class="callout callout-style-default callout-warning callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-DataHub memory limits
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Be careful about increasing <code>n</code> in the example below when on DataHub. Basic DataHub virtual machines by default only have 1 GB memory, so don’t increase <code>n</code> below or you may run out of memory if running on DataHub and this can cause problems in your DataHub session. If you’re doing this as part of the workshop, we’ve increased those limits somewhat, so somewhat larger values of <code>n</code> should be fine.</p>
-</div>
-</div>
-<div id="8bf64f43" class="cell" data-execution_count="1">
+<div id="3cf8c57d" class="cell" data-execution_count="1">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -565,7 +552,7 @@ DataHub memory limits
 </div>
 <div class="sourceCode" id="cb30"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calc.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>We might need to run it in a loop to be able to monitor the running process (since it finishes so quickly):</p>
-<div id="17481a00" class="cell" data-execution_count="2">
+<div id="a03dcf14" class="cell" data-execution_count="2">
 <details open="" class="code-fold">
 <summary>Code</summary>
 <div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ((i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span>i<span class="op">++</span>))<span class="op">;</span> do</span>
@@ -1528,57 +1515,50 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb32-463"><a href="#cb32-463" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb32-464"><a href="#cb32-464" aria-hidden="true" tabindex="-1"></a><span class="ex">We</span><span class="st">'ll run a simple linear algebra operation in Python to illustrate how we can monitor what is happening on a machine.</span></span>
 <span id="cb32-465"><a href="#cb32-465" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-466"><a href="#cb32-466" aria-hidden="true" tabindex="-1"></a><span class="st">::: {.callout-warning}</span></span>
-<span id="cb32-467"><a href="#cb32-467" aria-hidden="true" tabindex="-1"></a><span class="st">## DataHub memory limits</span></span>
-<span id="cb32-468"><a href="#cb32-468" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-469"><a href="#cb32-469" aria-hidden="true" tabindex="-1"></a><span class="st">Be careful about increasing `n` in the example below when on DataHub. Basic DataHub virtual machines by default only have 1 GB memory, so don'</span><span class="ex">t</span> increase <span class="kw">`</span><span class="ex">n</span><span class="kw">`</span> below or you may run out of memory if running on DataHub and this can cause problems in your DataHub session. If you<span class="st">'re doing this as part of the workshop, we'</span>ve increased those limits somewhat, so somewhat larger values of <span class="kw">`</span><span class="ex">n</span><span class="kw">`</span> should be fine.</span>
-<span id="cb32-470"><a href="#cb32-470" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-471"><a href="#cb32-471" aria-hidden="true" tabindex="-1"></a><span class="ex">:::</span></span>
+<span id="cb32-468"><a href="#cb32-468" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb32-469"><a href="#cb32-469" aria-hidden="true" tabindex="-1"></a><span class="st">#| eval: false</span></span>
+<span id="cb32-470"><a href="#cb32-470" aria-hidden="true" tabindex="-1"></a><span class="st">import numpy as np</span></span>
+<span id="cb32-471"><a href="#cb32-471" aria-hidden="true" tabindex="-1"></a><span class="st">import time</span></span>
 <span id="cb32-472"><a href="#cb32-472" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-475"><a href="#cb32-475" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-476"><a href="#cb32-476" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb32-477"><a href="#cb32-477" aria-hidden="true" tabindex="-1"></a><span class="ex">import</span> numpy as np</span>
-<span id="cb32-478"><a href="#cb32-478" aria-hidden="true" tabindex="-1"></a><span class="ex">import</span> time</span>
-<span id="cb32-479"><a href="#cb32-479" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-480"><a href="#cb32-480" aria-hidden="true" tabindex="-1"></a><span class="ex">def</span> run_linalg<span class="er">(</span><span class="ex">n</span><span class="kw">)</span><span class="bu">:</span></span>
-<span id="cb32-481"><a href="#cb32-481" aria-hidden="true" tabindex="-1"></a>    <span class="ex">z</span> = np.random.normal<span class="er">(</span><span class="ex">0,</span> 1, size=<span class="er">(</span><span class="ex">n,</span> n<span class="kw">))</span></span>
-<span id="cb32-482"><a href="#cb32-482" aria-hidden="true" tabindex="-1"></a>    <span class="ex">print</span><span class="er">(</span><span class="fu">time.time()</span><span class="kw">)</span></span>
-<span id="cb32-483"><a href="#cb32-483" aria-hidden="true" tabindex="-1"></a>    <span class="ex">x</span> = z.T.dot<span class="er">(</span><span class="ex">z</span><span class="kw">)</span>   <span class="co"># x = z'z</span></span>
-<span id="cb32-484"><a href="#cb32-484" aria-hidden="true" tabindex="-1"></a>    <span class="ex">print</span><span class="er">(</span><span class="fu">time.time()</span><span class="kw">)</span></span>
-<span id="cb32-485"><a href="#cb32-485" aria-hidden="true" tabindex="-1"></a>    <span class="ex">U</span> = np.linalg.cholesky<span class="er">(</span><span class="ex">x</span><span class="kw">)</span>  <span class="co"># factorize as x = U'U</span></span>
-<span id="cb32-486"><a href="#cb32-486" aria-hidden="true" tabindex="-1"></a>    <span class="ex">print</span><span class="er">(</span><span class="fu">time.time()</span><span class="kw">)</span></span>
-<span id="cb32-487"><a href="#cb32-487" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-488"><a href="#cb32-488" aria-hidden="true" tabindex="-1"></a><span class="co">## This allows us to run the code from the command line</span></span>
-<span id="cb32-489"><a href="#cb32-489" aria-hidden="true" tabindex="-1"></a><span class="co">## without running it when we import the file as a module.</span></span>
-<span id="cb32-490"><a href="#cb32-490" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">__name__</span> == <span class="st">'__main__'</span>:</span>
-<span id="cb32-491"><a href="#cb32-491" aria-hidden="true" tabindex="-1"></a>    <span class="ex">run_linalg</span><span class="er">(</span><span class="ex">4000</span><span class="kw">)</span></span>
-<span id="cb32-492"><a href="#cb32-492" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb32-493"><a href="#cb32-493" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-494"><a href="#cb32-494" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span><span class="fu">bash</span></span>
-<span id="cb32-495"><a href="#cb32-495" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calc.py</span>
-<span id="cb32-496"><a href="#cb32-496" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb32-497"><a href="#cb32-497" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-498"><a href="#cb32-498" aria-hidden="true" tabindex="-1"></a><span class="ex">We</span> might need to run it in a loop to be able to monitor the running process <span class="er">(</span><span class="ex">since</span> it finishes so quickly<span class="kw">)</span><span class="bu">:</span></span>
-<span id="cb32-499"><a href="#cb32-499" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-502"><a href="#cb32-502" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
-<span id="cb32-503"><a href="#cb32-503" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
-<span id="cb32-504"><a href="#cb32-504" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> <span class="kw">((</span><span class="va">i</span><span class="op">=</span><span class="dv">0</span><span class="kw">;</span><span class="va">i</span><span class="op">&lt;</span><span class="dv">10</span><span class="kw">;</span><span class="va">i</span><span class="op">++</span><span class="kw">));</span> <span class="cf">do</span></span>
-<span id="cb32-505"><a href="#cb32-505" aria-hidden="true" tabindex="-1"></a>  <span class="ex">python</span> calc.py</span>
-<span id="cb32-506"><a href="#cb32-506" aria-hidden="true" tabindex="-1"></a><span class="cf">done</span></span>
-<span id="cb32-507"><a href="#cb32-507" aria-hidden="true" tabindex="-1"></a><span class="kw">```</span></span>
-<span id="cb32-508"><a href="#cb32-508" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-509"><a href="#cb32-509" aria-hidden="true" tabindex="-1"></a><span class="co">### Monitoring CPU and memory use</span></span>
-<span id="cb32-510"><a href="#cb32-510" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-511"><a href="#cb32-511" aria-hidden="true" tabindex="-1"></a><span class="ex">We</span> can see CPU and memory usage via <span class="kw">`</span><span class="ex">top</span><span class="kw">`</span>.</span>
-<span id="cb32-512"><a href="#cb32-512" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-513"><a href="#cb32-513" aria-hidden="true" tabindex="-1"></a><span class="ex">If</span> we see more than 100% CPU usage, that indicates that the process is running a computation in parallel using multiple threads.</span>
-<span id="cb32-514"><a href="#cb32-514" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-515"><a href="#cb32-515" aria-hidden="true" tabindex="-1"></a><span class="ex">What</span> about if we see less than 100% CPU usage<span class="pp">?</span></span>
-<span id="cb32-516"><a href="#cb32-516" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb32-517"><a href="#cb32-517" aria-hidden="true" tabindex="-1"></a> <span class="ex">-</span> Our process might be busy doing I/O <span class="er">(</span><span class="ex">reading/writing</span> to/from disk<span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb32-518"><a href="#cb32-518" aria-hidden="true" tabindex="-1"></a> <span class="ex">-</span> Our process might be waiting for data from the internet or from another machine on the network.</span>
-<span id="cb32-519"><a href="#cb32-519" aria-hidden="true" tabindex="-1"></a> <span class="ex">-</span> The machine might be running low on physical memory, which in some cases will involve using disk as additional memory <span class="er">(</span><span class="ex">slow!</span><span class="kw">)</span><span class="bu">.</span></span>
-<span id="cb32-520"><a href="#cb32-520" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb32-473"><a href="#cb32-473" aria-hidden="true" tabindex="-1"></a><span class="st">def run_linalg(n):</span></span>
+<span id="cb32-474"><a href="#cb32-474" aria-hidden="true" tabindex="-1"></a><span class="st">    z = np.random.normal(0, 1, size=(n, n))</span></span>
+<span id="cb32-475"><a href="#cb32-475" aria-hidden="true" tabindex="-1"></a><span class="st">    print(time.time())</span></span>
+<span id="cb32-476"><a href="#cb32-476" aria-hidden="true" tabindex="-1"></a><span class="st">    x = z.T.dot(z)   # x = z'</span><span class="ex">z</span></span>
+<span id="cb32-477"><a href="#cb32-477" aria-hidden="true" tabindex="-1"></a>    <span class="ex">print</span><span class="er">(</span><span class="fu">time.time()</span><span class="kw">)</span></span>
+<span id="cb32-478"><a href="#cb32-478" aria-hidden="true" tabindex="-1"></a>    <span class="ex">U</span> = np.linalg.cholesky<span class="er">(</span><span class="ex">x</span><span class="kw">)</span>  <span class="co"># factorize as x = U'U</span></span>
+<span id="cb32-479"><a href="#cb32-479" aria-hidden="true" tabindex="-1"></a>    <span class="ex">print</span><span class="er">(</span><span class="fu">time.time()</span><span class="kw">)</span></span>
+<span id="cb32-480"><a href="#cb32-480" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-481"><a href="#cb32-481" aria-hidden="true" tabindex="-1"></a><span class="co">## This allows us to run the code from the command line</span></span>
+<span id="cb32-482"><a href="#cb32-482" aria-hidden="true" tabindex="-1"></a><span class="co">## without running it when we import the file as a module.</span></span>
+<span id="cb32-483"><a href="#cb32-483" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="ex">__name__</span> == <span class="st">'__main__'</span>:</span>
+<span id="cb32-484"><a href="#cb32-484" aria-hidden="true" tabindex="-1"></a>    <span class="ex">run_linalg</span><span class="er">(</span><span class="ex">4000</span><span class="kw">)</span></span>
+<span id="cb32-485"><a href="#cb32-485" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-486"><a href="#cb32-486" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-487"><a href="#cb32-487" aria-hidden="true" tabindex="-1"></a><span class="in">```bash</span></span>
+<span id="cb32-488"><a href="#cb32-488" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> calc.py</span>
+<span id="cb32-489"><a href="#cb32-489" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-490"><a href="#cb32-490" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-491"><a href="#cb32-491" aria-hidden="true" tabindex="-1"></a>We might need to run it in a loop to be able to monitor the running process (since it finishes so quickly):</span>
+<span id="cb32-492"><a href="#cb32-492" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-495"><a href="#cb32-495" aria-hidden="true" tabindex="-1"></a><span class="in">```{python}</span></span>
+<span id="cb32-496"><a href="#cb32-496" aria-hidden="true" tabindex="-1"></a><span class="co">#| eval: false</span></span>
+<span id="cb32-497"><a href="#cb32-497" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> ((i<span class="op">=</span><span class="dv">0</span><span class="op">;</span>i<span class="op">&lt;</span><span class="dv">10</span><span class="op">;</span>i<span class="op">++</span>))<span class="op">;</span> do</span>
+<span id="cb32-498"><a href="#cb32-498" aria-hidden="true" tabindex="-1"></a>  python calc.py</span>
+<span id="cb32-499"><a href="#cb32-499" aria-hidden="true" tabindex="-1"></a>done</span>
+<span id="cb32-500"><a href="#cb32-500" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb32-501"><a href="#cb32-501" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-502"><a href="#cb32-502" aria-hidden="true" tabindex="-1"></a><span class="fu">### Monitoring CPU and memory use</span></span>
+<span id="cb32-503"><a href="#cb32-503" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-504"><a href="#cb32-504" aria-hidden="true" tabindex="-1"></a>We can see CPU and memory usage via <span class="in">`top`</span>.</span>
+<span id="cb32-505"><a href="#cb32-505" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-506"><a href="#cb32-506" aria-hidden="true" tabindex="-1"></a>If we see more than 100% CPU usage, that indicates that the process is running a computation in parallel using multiple threads.</span>
+<span id="cb32-507"><a href="#cb32-507" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-508"><a href="#cb32-508" aria-hidden="true" tabindex="-1"></a>What about if we see less than 100% CPU usage?</span>
+<span id="cb32-509"><a href="#cb32-509" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-510"><a href="#cb32-510" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Our process might be busy doing I/O (reading/writing to/from disk).</span>
+<span id="cb32-511"><a href="#cb32-511" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>Our process might be waiting for data from the internet or from another machine on the network.</span>
+<span id="cb32-512"><a href="#cb32-512" aria-hidden="true" tabindex="-1"></a><span class="ss"> - </span>The machine might be running low on physical memory, which in some cases will involve using disk as additional memory (slow!).</span>
+<span id="cb32-513"><a href="#cb32-513" aria-hidden="true" tabindex="-1"></a> </span>
 </code><button title="Copy to Clipboard" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
